@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>CommerceFramework.Services.Catalog.EntityFramework</AssemblyName>
+    <RootNamespace>CommerceFramework.Services.Catalog.EntityFramework</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="5.0.9" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="CommerceFramework.Services.Catalog" />
+  </ItemGroup>
+
+</Project>

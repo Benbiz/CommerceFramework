@@ -1,0 +1,5 @@
+<Project>
+    <ItemGroup>
+        <ProjectReferenceProvider Include="CommerceFramework.Services.Catalog" ProjectPath="$(RepoRoot)Services\Catalog\Catalog\Catalog.csproj" />
+    </ItemGroup>
+</Project>

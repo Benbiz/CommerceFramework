@@ -1,0 +1,17 @@
+ <Project>
+ 
+  <ItemGroup>
+    <!--
+      For the _CheckForReferenceBoundaries target, mark project reference providers that _should_ be referenced with
+      Reference items but weren't. General principle is to use only Reference items when referencing a provider.
+      This simplifies project moves and shortens files.
+    -->
+    <ProjectReferenceProvider Update="@(ProjectReference->'%(Filename)')" DirectUse="1" />
+
+    <!-- Find Reference items satisfied using project reference providers. -->
+    <Reference Update="@(ProjectReferenceProvider)" ProjectPath="%(ProjectReferenceProvider.ProjectPath)" />
+
+    <ProjectReference Include="@(Reference->Distinct()->'%(ProjectPath)')" />
+    <Reference Remove="@(Reference->HasMetadata('ProjectPath'))" />
+  </ItemGroup>
+</Project>
